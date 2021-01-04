@@ -1,30 +1,13 @@
 package edu.es.eoi.disney;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Pelicula implements Alquilable{	
+public class Pelicula extends Media implements Alquilable, Reproducible{	
 			
-	private String titulo;
 	
-	private Double duracion;
-
-	private String year;
-	
-	private CategoriaEnum categoria;
-	
-	private Double valoracion;
-
-	private Director director;	
-
-	private List<Actor> actores= new ArrayList<Actor>();
 
 	public Pelicula(String titulo, Double duracion, String year, CategoriaEnum categoria) {
-		super();
-		this.titulo = titulo;
-		this.duracion = duracion;
-		this.year = year;
-		this.categoria = categoria;
+		super(titulo, duracion, year, categoria);
 	}
 
 	public String getTitulo() {
@@ -90,6 +73,12 @@ public class Pelicula implements Alquilable{
 		}else {
 			System.out.println("alquilada");
 		}
+		
+	}
+
+	@Override
+	public void reproducir() {
+		System.out.println("Reproduciendo " + this.titulo);
 		
 	}
 
