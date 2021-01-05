@@ -3,7 +3,7 @@ package edu.es.eoi.disney;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Serie implements Alquilable{	
+public class Serie implements Alquilable,Reproducible{	
 			
 	private String titulo;
 	
@@ -93,6 +93,9 @@ public class Serie implements Alquilable{
 		
 	}
 
-	
+	@Override
+	public void reproducir() {
+		System.out.println("Estoy reproduciendo la serie: " + this.titulo);		
+	}
 	
 }

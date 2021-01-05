@@ -36,12 +36,14 @@ public class DisneyMain {
 
 			System.out.println(film.getTitulo() + ", year:" + film.getYear());
 			alquilar(film);
+			reproducir(film);
 		}	
 		
-		for (Serie film : series) {
+		for (Serie serie : series) {
 
-			System.out.println(film.getTitulo() + ", year:" + film.getYear());
-			alquilar(film);
+			System.out.println(serie.getTitulo() + ", year:" + serie.getYear());
+			alquilar(serie);
+			reproducir(serie);
 		}	
 
 		
@@ -55,6 +57,10 @@ public class DisneyMain {
 	
 	static void alquilar(Alquilable alquilable) {		
 		alquilable.alquilar(2);		
+	}
+	
+	static void reproducir(Reproducible reproducible) {		
+		reproducible.reproducir();		
 	}
 
 }

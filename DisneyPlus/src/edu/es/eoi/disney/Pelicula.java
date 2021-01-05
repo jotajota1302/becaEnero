@@ -3,11 +3,13 @@ package edu.es.eoi.disney;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pelicula implements Alquilable{	
+public class Pelicula implements Alquilable,Reproducible{	
 			
 	private String titulo;
 	
 	private Double duracion;
+	
+	private int edadMinima;
 
 	private String year;
 	
@@ -25,6 +27,14 @@ public class Pelicula implements Alquilable{
 		this.duracion = duracion;
 		this.year = year;
 		this.categoria = categoria;
+	}
+
+	public int getEdadMinima() {
+		return edadMinima;
+	}
+
+	public void setEdadMinima(int edadMinima) {
+		this.edadMinima = edadMinima;
 	}
 
 	public String getTitulo() {
@@ -93,6 +103,12 @@ public class Pelicula implements Alquilable{
 		
 	}
 
+	@Override
+	public void reproducir() {
+		System.out.println("Estoy reproduciendo la pelicula: " + this.titulo);		
+	}
+
+	
 	
 	
 }
