@@ -6,6 +6,8 @@ public class TestMaven {
 		
 		System.out.println("Hello world Maven! version 2");
 		
+	
+		
 	}
 
 }
