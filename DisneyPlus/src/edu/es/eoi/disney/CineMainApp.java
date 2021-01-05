@@ -2,6 +2,8 @@ package edu.es.eoi.disney;
 
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class CineMainApp {
 
@@ -14,13 +16,41 @@ public class CineMainApp {
 		generarKeySetButacas(butacas);
 
 		cine.setButacas(butacas);
-
-		// mi cine con mis butacas
-		System.out.println(butacas);
-		
-		//metodo generar y sentar personas
 	
+		sentarPersonas(cine, butacas);		
+		
+		int entradas=0;
+		for (Persona p : butacas.values()) {
+			if(p!=null) {
+				entradas=entradas+1;
+			}			
+		}
+		
+		System.out.println("He vendido:" + entradas  + " entradas");
 
+	}
+
+	private static void sentarPersonas(Cine cine, Map<String, Persona> butacas) {	
+
+		for (int i = 1; i < 101; i++) {
+			Espectador p = new Espectador();
+			((Persona) (p)).setNombre("Persona".concat(String.valueOf(i)));
+			
+			for (String butaca : butacas.keySet()) {
+				
+				if (butacas.get(butaca) != null) {
+//					System.out.println("asiento ocupado");
+				}else if(p.getDinero()>= cine.getPrecioEntrada()){
+					butacas.put(butaca, p);
+					System.out.println(p.getNombre()+" sentado en asiento: " + butaca);
+					break;
+				}else {
+					System.out.println(p.getNombre() + " no tiene suficiente dinero");
+					break;
+				}
+			}
+
+		}
 	}
 
 	private static Cine crearSesionCine() {

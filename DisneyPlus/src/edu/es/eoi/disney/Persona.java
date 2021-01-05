@@ -28,6 +28,14 @@ public class Persona {
 		System.out.println("la persona se subscribe");
 
 	}
+	
+	
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
 
 	public String getNombre() {
 		return nombre;

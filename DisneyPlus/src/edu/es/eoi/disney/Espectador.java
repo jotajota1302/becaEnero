@@ -14,10 +14,9 @@ public class Espectador extends Persona{
 		this.dinero = Math.random()*10;
 	}
 
-
-
 	public double getDinero() {
 		return dinero;
 	}
+	
 
 }
