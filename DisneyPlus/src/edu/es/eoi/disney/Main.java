@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Main {
+public class Main {	
 	
 	public static MaquinaExpendedora maquina;
 
 	public static void main(String[] args) {			
-					
+				
 		reponerMaquina(new ArrayList<Producto>());
 		
 		if(null==maquina||maquina.getProductos().isEmpty()) {
