@@ -15,7 +15,7 @@ public class PersonRepositoryMemoryImpl implements PersonRepository {
 
 	@Override
 	public Person read(String sf) {
-		return MainApp.users.get(sf);
+		return MainApp.users.get( sf);
 	}
 
 	@Override
