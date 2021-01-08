@@ -1,10 +1,10 @@
-package edu.es.eoi.repository;
+package edu.es.eoi.service;
 
 import java.util.Collection;
 
 import edu.es.eoi.entity.Recipe;
 
-public interface RecipeRepository extends CrudInterface<Recipe, String>{
+public interface RecipeService {
 	
 	public Collection<Recipe> readAll();
 

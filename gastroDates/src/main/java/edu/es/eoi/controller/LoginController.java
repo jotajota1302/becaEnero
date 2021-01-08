@@ -25,8 +25,11 @@ public class LoginController {
 			System.out.println("usuario no encontrado");
 			LoginMenu.printMenuLogin();
 		}
-		
-		
+	}
+	
+	public void logout() {	
+		MainApp.user=null;
+		LoginMenu.printMenuLogin();		
 	}
 
 }
