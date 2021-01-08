@@ -12,12 +12,11 @@ public class User extends Person {
 	
 	private String username;
 	private String password;
+	private String mail;	
 	private Gender gender;
 	private String address;
-	private String phoneNumbers;
-	private String mail;
-	private List<Recipe> recipes;
-	
+	private String phoneNumber;	
+	private List<Recipe> recipes;	
 	private Profile profile;
 	
 

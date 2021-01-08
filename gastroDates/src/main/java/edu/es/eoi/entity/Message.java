@@ -9,6 +9,7 @@ import lombok.Setter;
 @Setter
 public class Message {
 	
+	private String id;
 	private User from;
 	private User to;
 	private String message;

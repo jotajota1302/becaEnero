@@ -12,6 +12,7 @@ public class Chef extends Person {
 	private String restaurant;	
 	private String phone;
 	private String mail;
+	private String web;
 	private List<Recipe> recipes;
 
 }

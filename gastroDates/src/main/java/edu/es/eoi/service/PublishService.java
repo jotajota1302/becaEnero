@@ -1,7 +1,11 @@
 package edu.es.eoi.service;
 
 public interface PublishService {
-	
-	void match();	
+
+	void publishRecipe();
+
+	void shareRecipe();
+
+	void valorateRecipe();
 
 }
