@@ -4,10 +4,10 @@ public interface CrudInterface<E,SEARCH_FIELD> {
 
 	void save(E e);
 	
-	void read(SEARCH_FIELD sf);
+	E read(SEARCH_FIELD sf);
 	
 	void delete(E e);
 	
-	void update(E e);
+	E update(E e);
 	
 }

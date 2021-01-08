@@ -5,9 +5,11 @@ import java.util.List;
 import edu.es.eoi.enums.Gender;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class User extends Person {
 	
 	private String username;
