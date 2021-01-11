@@ -22,7 +22,7 @@ public class MainApp {
 	public static Map<String, Recipe> recipes = new HashMap<String, Recipe>();
 	public static User user;
 	public static Properties properties = new Properties();
-
+	
 	private static Logger logger = Logger.getLogger(MainApp.class);
 
 	public static void main(String[] args) {
