@@ -57,7 +57,7 @@ public class MainApp {
 
 	}
 
-	private static void initUsers() {
+	public static void initUsers() {
 
 		User person = new User();
 		person.setName("Pepe");
@@ -76,7 +76,7 @@ public class MainApp {
 		users.put(person.getUsername(), person);
 	}
 
-	private static void initRecipes() {
+	public static void initRecipes() {
 
 		Recipe recipe = new Recipe();
 		recipe.setRecipeName("chuleton a la brasa");
