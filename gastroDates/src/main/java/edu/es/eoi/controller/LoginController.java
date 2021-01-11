@@ -1,5 +1,7 @@
 package edu.es.eoi.controller;
 
+import org.apache.log4j.Logger;
+
 import edu.es.eoi.entity.User;
 import edu.es.eoi.main.MainApp;
 import edu.es.eoi.service.LoginService;
@@ -9,7 +11,11 @@ import edu.es.eoi.ui.MainMenu;
 
 public class LoginController {	
 	
+	private Logger logger=Logger.getLogger(LoginController.class);
+	
 	public void login(String user,String password) throws Exception {
+		
+		logger.debug("parametros: user: " + user+", pwd: "+ password);
 		
 		if(password.length()<=4) {
 			throw new Exception("Formato de password incorrecto");

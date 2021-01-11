@@ -3,6 +3,7 @@ package edu.es.eoi.ui;
 import java.util.Scanner;
 
 import edu.es.eoi.controller.LoginController;
+import edu.es.eoi.main.MainApp;
 
 @SuppressWarnings("resource")
 public class LoginMenu {
@@ -11,7 +12,7 @@ public class LoginMenu {
 		
 		LoginController controller= new LoginController();
 		
-		System.out.println("Bienvenido al menu Login de GastroDates");
+		System.out.println("Bienvenido al menu Login de: " + MainApp.properties.getProperty("application.name"));
 		System.out.println("****************************************");
 		System.out.println("Introduzca usuario: ");
 	
