@@ -12,6 +12,7 @@ import edu.es.eoi.entity.User;
 public class PersonRepositoryJDBCImpl implements PersonRepository{
 
 	public Connection getConnection() {
+		
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gastroDates?serverTimezone=UTC","root","root");			
@@ -72,7 +73,7 @@ public class PersonRepositoryJDBCImpl implements PersonRepository{
 		// TODO Auto-generated method stub
 		
 	}
- 
+
 	@Override
 	public Person update(Person e) {
 		// TODO Auto-generated method stub
