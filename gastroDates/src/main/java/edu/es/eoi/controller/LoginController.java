@@ -17,7 +17,7 @@ public class LoginController {
 		
 		logger.debug("parametros: user: " + user+", pwd: "+ password);
 		
-		if(password.length()<=4) {
+		if(password.length()<=2) {
 			throw new Exception("Formato de password incorrecto");
 		}
 	
