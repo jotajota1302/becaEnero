@@ -7,5 +7,7 @@ import edu.es.eoi.entity.Recipe;
 public interface RecipeRepository extends CrudInterface<Recipe, String>{
 	
 	public Collection<Recipe> readAll();
+	
+	public Collection<Recipe> readRecipesByUser(Integer id);
 
 }
