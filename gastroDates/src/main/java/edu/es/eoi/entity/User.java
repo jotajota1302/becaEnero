@@ -1,7 +1,5 @@
 package edu.es.eoi.entity;
 
-import java.util.List;
-
 import edu.es.eoi.enums.Gender;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +16,7 @@ public class User extends Person {
 	private Gender gender;
 	private String address;
 	private String phoneNumber;	
-	private List<Recipe> recipes;	
+	private Recipe recipe;	
 	private Profile profile;
 	
 

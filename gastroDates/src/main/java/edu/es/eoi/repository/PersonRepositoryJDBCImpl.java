@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import edu.es.eoi.entity.Person;
+import edu.es.eoi.entity.Recipe;
 import edu.es.eoi.entity.User;
 
 public class PersonRepositoryJDBCImpl implements PersonRepository{
@@ -46,19 +47,25 @@ public class PersonRepositoryJDBCImpl implements PersonRepository{
 		
 		Connection con=getConnection();
 		try {
-			PreparedStatement st = con.prepareStatement("SELECT id,username,password,name,surname FROM gastrodates.user WHERE username=?");
+			PreparedStatement st = con.prepareStatement("SELECT u.id,u.username,u.password,u.name,u.surname,r.id,r.name,r.description FROM user u LEFT JOIN recipe r ON u.id=r.idUser WHERE u.username=?");
 			st.setString(1, sf);
 			
 			ResultSet rs=st.executeQuery();			
 			while(rs.next()) {
 				
 				user=new User();
-				user.setId(rs.getInt("id"));
-				user.setUsername(rs.getString("username"));
-				user.setPassword(rs.getString("password"));
-				user.setName(rs.getString("name"));
-				user.setSurname(rs.getString("surname"));
+				user.setId(rs.getInt("u.id"));
+				user.setUsername(rs.getString("u.username"));
+				user.setPassword(rs.getString("u.password"));
+				user.setName(rs.getString("u.name"));
+				user.setSurname(rs.getString("u.surname"));
 				
+				Recipe recipe= new Recipe();
+				recipe.setId(rs.getInt("r.id"));
+				recipe.setRecipeName(rs.getString("r.name"));
+				recipe.setDescription(rs.getString("r.description"));
+				
+				user.setRecipe(recipe);
 			}
 		
 		} catch (SQLException e) {		
