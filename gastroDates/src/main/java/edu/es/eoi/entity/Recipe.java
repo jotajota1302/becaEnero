@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 public class Recipe {
 
+	private int id;
 	private String recipeName;
 	private String description;
 	private String photo;
