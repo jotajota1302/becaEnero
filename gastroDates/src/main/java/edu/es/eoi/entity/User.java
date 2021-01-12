@@ -12,6 +12,7 @@ import lombok.ToString;
 @ToString
 public class User extends Person {
 	
+	private int id;
 	private String username;
 	private String password;
 	private String mail;	

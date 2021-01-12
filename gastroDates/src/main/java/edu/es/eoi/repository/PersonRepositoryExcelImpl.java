@@ -19,14 +19,6 @@ public class PersonRepositoryExcelImpl implements PersonRepository {
 	public void save(Person e) {
 		
 	}
-	
-	public Person changeName(String param) {
-		
-		Person person= new User();
-		person.setName(param);
-		
-		return person;		
-	}
 
 	@Override	
 	public Person read(String sf) {

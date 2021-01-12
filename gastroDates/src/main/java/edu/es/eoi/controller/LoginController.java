@@ -1,5 +1,7 @@
 package edu.es.eoi.controller;
 
+import java.util.Calendar;
+
 import org.apache.log4j.Logger;
 
 import edu.es.eoi.entity.User;
@@ -15,6 +17,8 @@ public class LoginController {
 	
 	public void login(String user,String password) throws Exception {
 		
+		long millisBefore=Calendar.getInstance().getTimeInMillis();
+		
 		logger.debug("parametros: user: " + user+", pwd: "+ password);
 		
 		if(password.length()<=2) {
@@ -24,6 +28,12 @@ public class LoginController {
 		LoginService service= new LoginServiceImpl();	
 		User entity=service.login(user, password);
 		
+		long millisAfter=Calendar.getInstance().getTimeInMillis();
+		
+		long diff=millisAfter-millisBefore;
+		
+		logger.debug("El metodo ha tardado: " + diff +" msec");		
+		
 		if(entity!=null) {
 			MainApp.user=entity;
 			MainMenu.printMenuMain();
@@ -31,6 +41,8 @@ public class LoginController {
 			System.out.println("usuario no encontrado");
 			LoginMenu.printMenuLogin();
 		}
+		
+		
 	}
 	
 	public void logout() {	
