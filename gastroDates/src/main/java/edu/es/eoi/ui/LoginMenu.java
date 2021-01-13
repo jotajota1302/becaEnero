@@ -22,12 +22,7 @@ public class LoginMenu {
 		scanner=new Scanner(System.in);
 		String password=scanner.nextLine();			
 		
-		try {
-			controller.login(user, password);
-		} catch (Exception e) {			
-			System.out.println("Error en la longitud minima del password");
-			printMenuLogin();
-		}		
+		controller.login(user, password);		
 		
 	}
 

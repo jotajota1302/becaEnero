@@ -17,7 +17,7 @@ public class RecipeRepositoryJDBCImpl implements RecipeRepository {
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gastroDates?serverTimezone=UTC", "root",
 					"root");
-			conn.setAutoCommit(false);
+			conn.setAutoCommit(true);
 		} catch (SQLException e) {
 			System.out.println("Could not connect to DB: " + e.getMessage());
 		}

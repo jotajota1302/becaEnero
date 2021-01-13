@@ -15,16 +15,12 @@ public class LoginController {
 	
 	private Logger logger=Logger.getLogger(LoginController.class);
 	
-	public void login(String user,String password) throws Exception {
+	public void login(String user,String password) {
 		
 		long millisBefore=Calendar.getInstance().getTimeInMillis();
 		
 		logger.debug("parametros: user: " + user+", pwd: "+ password);
-		
-		if(password.length()<=2) {
-			throw new Exception("Formato de password incorrecto");
-		}
-	
+			
 		LoginService service= new LoginServiceImpl();	
 		User entity=service.login(user, password);
 		

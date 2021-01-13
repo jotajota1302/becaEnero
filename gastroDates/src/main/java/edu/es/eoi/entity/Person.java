@@ -1,17 +1,26 @@
 package edu.es.eoi.entity;
 
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@MappedSuperclass
 public abstract class Person {
-	
+		
+	@Id
 	private int id;
+	
+	@Column
 	private String name;
-	private String surname;
-	private Date birthDate;	
+	
+	@Column	
+	private String surname;	
+	
+
 	
 }

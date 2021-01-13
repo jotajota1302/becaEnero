@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import edu.es.eoi.entity.Person;
-import edu.es.eoi.entity.Recipe;
 import edu.es.eoi.entity.User;
 
 public class PersonRepositoryJDBCImpl implements PersonRepository{
@@ -17,7 +16,7 @@ public class PersonRepositoryJDBCImpl implements PersonRepository{
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gastroDates?serverTimezone=UTC","root","root");			
-			conn.setAutoCommit(false);
+			conn.setAutoCommit(true);
 		} catch (SQLException e) {
 			System.out.println("Could not connect to DB: " + e.getMessage());
 		}
@@ -59,13 +58,13 @@ public class PersonRepositoryJDBCImpl implements PersonRepository{
 				user.setPassword(rs.getString("u.password"));
 				user.setName(rs.getString("u.name"));
 				user.setSurname(rs.getString("u.surname"));
+//				
+//				Recipe recipe= new Recipe();
+//				recipe.setId(rs.getInt("r.id"));
+//				recipe.setRecipeName(rs.getString("r.name"));
+//				recipe.setDescription(rs.getString("r.description"));
 				
-				Recipe recipe= new Recipe();
-				recipe.setId(rs.getInt("r.id"));
-				recipe.setRecipeName(rs.getString("r.name"));
-				recipe.setDescription(rs.getString("r.description"));
-				
-				user.setRecipe(recipe);
+//				user.setRecipe(recipe);
 			}
 		
 		} catch (SQLException e) {		

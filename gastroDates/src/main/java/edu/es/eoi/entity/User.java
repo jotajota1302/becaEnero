@@ -1,5 +1,8 @@
 package edu.es.eoi.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
 import edu.es.eoi.enums.Gender;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,10 +11,13 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Entity
 public class User extends Person {
 		
-	private String username;
-	private String password;
+	@Column
+	private String username;	
+	@Column
+	private String password;	
 	private String mail;	
 	private Gender gender;
 	private String address;

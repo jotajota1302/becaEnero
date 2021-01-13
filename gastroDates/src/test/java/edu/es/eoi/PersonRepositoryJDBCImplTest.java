@@ -16,7 +16,7 @@ class PersonRepositoryJDBCImplTest {
 		PersonRepository repository= new PersonRepositoryJDBCImpl();
 		
 		assertEquals("Perez",((User)repository.read("pepe")).getSurname());
-		assertEquals(1,((User)repository.read("pepe")).getRecipe().getId());
+//		assertEquals(1,((User)repository.read("pepe")).getRecipe().getId());
 	
 		
 	}

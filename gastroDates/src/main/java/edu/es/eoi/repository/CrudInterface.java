@@ -8,6 +8,6 @@ public interface CrudInterface<E,SEARCH_FIELD> {
 	
 	void delete(E e);
 	
-	E update(E e);
+	E update(E e); 
 	
 }

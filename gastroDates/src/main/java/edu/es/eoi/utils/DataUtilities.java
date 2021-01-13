@@ -13,7 +13,7 @@ public class DataUtilities {
 		if(conexion==null) {
 			try {
 				conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/gastroDates?serverTimezone=UTC","root","root");			
-				conexion.setAutoCommit(false);
+				conexion.setAutoCommit(true);
 			} catch (SQLException e) {
 				System.out.println("Could not connect to DB: " + e.getMessage());
 			}
@@ -26,7 +26,7 @@ public class DataUtilities {
 		
 		if (conn != null) {
 			try {
-				conn.close();
+				conn.close();			
 			} catch (SQLException e) {
 			}
 		}
