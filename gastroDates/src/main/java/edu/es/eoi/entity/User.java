@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import edu.es.eoi.enums.Gender;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter

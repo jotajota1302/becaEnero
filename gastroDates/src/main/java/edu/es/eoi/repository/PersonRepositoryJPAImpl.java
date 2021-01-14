@@ -24,6 +24,7 @@ public class PersonRepositoryJPAImpl implements PersonRepository{
 		queryNative.setParameter(1, sf);
 		
 		Object user = queryNative.getSingleResult();
+		System.out.println(user);
 		
 		Query query=manager.createQuery("from User u where u.name=?");
 		query.setParameter(1, sf);
