@@ -1,15 +1,15 @@
 package edu.es.eoi;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-
 import edu.es.eoi.entity.Message;
 import edu.es.eoi.entity.User;
 import edu.es.eoi.repository.MessageRepositoryJDBCImpl;
+
 
 class MessageRepositoryJDBCImplTest {
 
@@ -34,14 +34,15 @@ class MessageRepositoryJDBCImplTest {
 		
 		repository.save(message);		
 				
-		assertEquals("","");	
+		assertEquals(1, 1);
+	
 		
 	}
 	
 	@Test
 	public void testFindMessagesByUsernameAndReaded() {			
 				
-		List<Message> messages=repository.getMessagesBy("pepe", false);				
+		List<Message> messages=repository.getMessagesBy("pepe", true);				
 		assertNotNull(messages);
 		
 	}
