@@ -10,7 +10,6 @@ import edu.es.eoi.entity.Message;
 import edu.es.eoi.entity.User;
 import edu.es.eoi.repository.MessageRepositoryJDBCImpl;
 
-
 class MessageRepositoryJDBCImplTest {
 
 	public MessageRepositoryJDBCImpl repository= new MessageRepositoryJDBCImpl();
