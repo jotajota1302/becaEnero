@@ -16,14 +16,14 @@ import edu.es.eoi.entity.Recipe;
 import edu.es.eoi.entity.User;
 import edu.es.eoi.ui.LoginMenu;
 
-public class MainApp {
+public class GastroDatesMainApp {
 
 	public static Map<String, User> users = new HashMap<String, User>();
 	public static Map<String, Recipe> recipes = new HashMap<String, Recipe>();
 	public static User user;
 	public static Properties properties = new Properties();
 	
-	private static Logger logger = Logger.getLogger(MainApp.class);
+	private static Logger logger = Logger.getLogger(GastroDatesMainApp.class);
 
 	public static void main(String[] args) {
 

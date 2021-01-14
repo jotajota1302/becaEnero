@@ -5,13 +5,13 @@ import java.util.Scanner;
 import edu.es.eoi.controller.ChatController;
 import edu.es.eoi.controller.LoginController;
 import edu.es.eoi.controller.RecipeController;
-import edu.es.eoi.main.MainApp;
+import edu.es.eoi.main.GastroDatesMainApp;
 
 public class MainMenu {
 	
 	public static void printMenuMain() {
 
-		System.out.println("Bienvenido: " + MainApp.user.getName() + " al menu principal de GastroDates");
+		System.out.println("Bienvenido: " + GastroDatesMainApp.user.getName() + " al menu principal de GastroDates");
 		System.out.println("Elige una opcion: ");
 		System.out.println("1-Publicar Receta: ");
 		System.out.println("2-Ver Recetas: ");
@@ -30,7 +30,7 @@ public class MainMenu {
 			break;
 		case 4:			
 			ChatController chatController= new ChatController();
-			chatController.readMessagesByUsernameAndReaded(MainApp.user.getUsername(), false);
+			chatController.readMessagesByUsernameAndReaded(GastroDatesMainApp.user.getUsername(), false);
 			break;
 		case 5:			
 			LoginController loginController= new LoginController();

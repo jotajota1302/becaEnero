@@ -5,7 +5,7 @@ import java.util.Calendar;
 import org.apache.log4j.Logger;
 
 import edu.es.eoi.entity.User;
-import edu.es.eoi.main.MainApp;
+import edu.es.eoi.main.GastroDatesMainApp;
 import edu.es.eoi.service.LoginService;
 import edu.es.eoi.service.LoginServiceImpl;
 import edu.es.eoi.ui.LoginMenu;
@@ -31,7 +31,7 @@ public class LoginController {
 		logger.debug("El metodo ha tardado: " + diff +" msec");		
 		
 		if(entity!=null) {
-			MainApp.user=entity;
+			GastroDatesMainApp.user=entity;
 			MainMenu.printMenuMain();
 		}else {
 			System.out.println("usuario no encontrado");
@@ -42,7 +42,7 @@ public class LoginController {
 	}
 	
 	public void logout() {	
-		MainApp.user=null;
+		GastroDatesMainApp.user=null;
 		LoginMenu.printMenuLogin();		
 	}
 
