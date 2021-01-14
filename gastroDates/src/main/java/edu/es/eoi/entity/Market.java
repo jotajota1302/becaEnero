@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Ingredient {
+public class Market {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,7 +20,7 @@ public class Ingredient {
 	@Column
 	private String name;
 	@Column
-	private double price;	
+	private String phone;
 	
 
 }

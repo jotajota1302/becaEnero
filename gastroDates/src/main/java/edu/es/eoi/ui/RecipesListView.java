@@ -18,8 +18,7 @@ public class RecipesListView {
 			
 			for (Ingredient	ingredient : recipe.getIngredients()) {
 				System.out.println("Ingrediente: ");
-				System.out.println("nombre: " + ingredient.getName());
-				System.out.println("cantidad: "+ingredient.getAmount() +"grs.");
+				System.out.println("nombre: " + ingredient.getName());			
 				System.out.println("precio: "+ingredient.getPrice()+" EUR");
 			}
 		}

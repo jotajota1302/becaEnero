@@ -84,13 +84,11 @@ public class GastroDatesMainApp {
 		recipe.setValoration(5.0);
 
 		Ingredient ingrediente1 = new Ingredient();
-		ingrediente1.setName("carne");
-		ingrediente1.setAmount(1000);
+		ingrediente1.setName("carne");		
 		ingrediente1.setPrice(20);
 
 		Ingredient ingrediente2 = new Ingredient();
-		ingrediente2.setName("sal");
-		ingrediente2.setAmount(10);
+		ingrediente2.setName("sal");		
 		ingrediente2.setPrice(0.30);
 
 		Set<Ingredient> ingredientes = new HashSet<>();
