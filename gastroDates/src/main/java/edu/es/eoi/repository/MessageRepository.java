@@ -12,6 +12,6 @@ public interface MessageRepository{
 	
 	int update(Message e);
 	
-	void delete(Message e);
+	int delete(Message e);
 
 }

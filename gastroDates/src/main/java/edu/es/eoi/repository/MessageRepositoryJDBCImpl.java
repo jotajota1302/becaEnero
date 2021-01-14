@@ -155,11 +155,23 @@ public class MessageRepositoryJDBCImpl implements MessageRepository {
 		
 	}
 
-
 	@Override
-	public void delete(Message e) {
-		// TODO Auto-generated method stub
+	public int delete(Message e) {
+	
+		int result = 0;
+		connection=getConnection();
 		
+		try {
+			PreparedStatement st=connection.prepareStatement("DELETE FROM message WHERE id = ?");		
+			st.setInt(1, e.getId());
+			
+			result=st.executeUpdate();
+			
+		} catch (SQLException e1) {	
+			e1.printStackTrace();
+		}
+		
+		return result;
 	}
 
 	

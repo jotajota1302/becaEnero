@@ -63,5 +63,20 @@ class MessageRepositoryJDBCImplTest {
 		
 	}
 	
+	@Test
+	public void testDeleteMessage() {
+		
+		repository.setTest(true);
+		
+		Message e=new Message();
+		e.setId(15);		
+		
+		int reponse=repository.delete(e);
+		
+		assertEquals(1, reponse);
+		
+		
+	}
+	
 
 }
