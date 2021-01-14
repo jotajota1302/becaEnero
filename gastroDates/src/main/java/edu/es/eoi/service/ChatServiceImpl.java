@@ -6,8 +6,6 @@ import edu.es.eoi.entity.Message;
 import edu.es.eoi.entity.User;
 import edu.es.eoi.repository.MessageRepository;
 import edu.es.eoi.repository.MessageRepositoryJDBCImpl;
-import edu.es.eoi.repository.PersonRepository;
-import edu.es.eoi.repository.PersonRepositoryJDBCImpl;
 
 public class ChatServiceImpl implements ChatService {
 
@@ -29,6 +27,13 @@ public class ChatServiceImpl implements ChatService {
 	public List<Message> readMessagesByUsernameAndReaded(User user, Boolean readed) {
 		
 		return repository.getMessagesBy(user.getName(),readed);
+		
+	}
+
+	@Override
+	public void updateMessage(Message message) {
+		
+		repository.update(message);
 		
 	}
 

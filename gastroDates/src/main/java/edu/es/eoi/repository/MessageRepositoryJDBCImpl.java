@@ -54,7 +54,6 @@ public class MessageRepositoryJDBCImpl implements MessageRepository {
 
 	}
 
-
 	@Override
 	public void save(Message e) {
 
@@ -108,9 +107,12 @@ public class MessageRepositoryJDBCImpl implements MessageRepository {
 				Message message = new Message();
 				message.setId(rs.getInt("m.id"));
 				message.setMessage(rs.getString("m.message"));
-				User user = new User();
-				user.setName(rs.getString("o.name"));
-				message.setOrigin(user);
+				User origin = new User();
+				origin.setName(rs.getString("o.name"));
+				User destination = new User();
+				destination.setName(rs.getString("d.name"));
+				message.setOrigin(origin);
+				message.setDestination(destination);
 				message.setDate(rs.getDate("m.datetime"));
 				message.setReaded(rs.getBoolean("m.readed"));
 
@@ -128,13 +130,37 @@ public class MessageRepositoryJDBCImpl implements MessageRepository {
 
 	}
 
+	@Override
+	public int update(Message e) {
+		
+		int response = 0;
+		connection=getConnection();
+		
+		try {
+			PreparedStatement st=connection.prepareStatement("UPDATE message SET readed = ?,message=? where id=?");
+			
+			st.setBoolean(1, e.isReaded());
+			st.setString(2, e.getMessage());
+			st.setInt(3, e.getId());
+			
+			 response=st.executeUpdate();
+			
+		} catch (SQLException e1) {			
+			e1.printStackTrace();
+		}finally {
+			DataUtilities.closeConnection(connection);
+		}		
+		
+		return response;
+		
+	}
+
+
+	@Override
 	public void delete(Message e) {
-
+		// TODO Auto-generated method stub
+		
 	}
 
-	public Message update(Message e) {
-
-		return null;
-	}
-
+	
 }

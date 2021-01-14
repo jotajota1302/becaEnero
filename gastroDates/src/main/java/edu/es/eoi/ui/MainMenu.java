@@ -16,12 +16,12 @@ public class MainMenu {
 		System.out.println("1-Publicar Receta: ");
 		System.out.println("2-Ver Recetas: ");
 		System.out.println("3-Buscar Match: ");
-		System.out.println("4-Ver mensajes: ");
+		System.out.println("4-Leer Mensajes: ");
 		System.out.println("5-Logout ");
 		
+		@SuppressWarnings("resource")
 		Scanner scanner= new Scanner(System.in);
-		int opcion=scanner.nextInt();
-		scanner.close();
+		int opcion=scanner.nextInt();		
 		
 		switch (opcion) {
 		case 2:			

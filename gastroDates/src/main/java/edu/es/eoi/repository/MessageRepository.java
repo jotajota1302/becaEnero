@@ -9,5 +9,9 @@ public interface MessageRepository{
 	void save(Message e);
 
 	List<Message> getMessagesBy(String username, Boolean read);
+	
+	int update(Message e);
+	
+	void delete(Message e);
 
 }

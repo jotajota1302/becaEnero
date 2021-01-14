@@ -10,7 +10,6 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 @Entity
 public class User extends Person {
 		
@@ -24,6 +23,12 @@ public class User extends Person {
 	private String phoneNumber;	
 	private Recipe recipe;	
 	private Profile profile;
+	
+	@Override
+	public String toString() {
+		return super.getName();
+	}
+	
 	
 
 }

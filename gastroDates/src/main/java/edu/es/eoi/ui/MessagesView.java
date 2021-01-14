@@ -13,5 +13,12 @@ public class MessagesView {
 		
 		
 	}
+	
+	public static void sendMessage() {
+		
+		//vista de scanner y pedir a info a usuario
+		
+		
+	}
 
 }

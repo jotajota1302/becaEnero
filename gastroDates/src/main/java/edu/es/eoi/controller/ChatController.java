@@ -30,9 +30,14 @@ public class ChatController {
 		User user=(User) personService.findByUsername(username);
 				
 		List<Message> messages=chatService.readMessagesByUsernameAndReaded(user, readed);
-		
+				
 		MessagesView.printMessages(messages);
 		
+		for (Message message : messages) {
+			message.setReaded(true);
+			chatService.updateMessage(message);
+		}
+				
 		MainMenu.printMenuMain();
 	}
 

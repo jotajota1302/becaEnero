@@ -11,4 +11,6 @@ public interface ChatService {
 	
 	public List<Message> readMessagesByUsernameAndReaded(User user,Boolean readed);
 
+	public void updateMessage(Message message);
+	
 }

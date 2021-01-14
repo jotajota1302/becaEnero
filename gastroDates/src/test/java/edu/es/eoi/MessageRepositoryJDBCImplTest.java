@@ -45,5 +45,23 @@ class MessageRepositoryJDBCImplTest {
 		assertNotNull(messages);
 		
 	}
+	
+	@Test
+	public void testUpdateMessage() {
+		
+		repository.setTest(false);
+		
+		Message e=new Message();
+		e.setId(15);
+		e.setReaded(true);
+		e.setMessage("UPDATE TEST");
+		
+		int reponse=repository.update(e);
+		
+		assertEquals(1, reponse);
+		
+		
+	}
+	
 
 }
