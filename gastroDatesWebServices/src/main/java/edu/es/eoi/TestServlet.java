@@ -16,8 +16,7 @@ public class TestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String dinero = req.getParameter("dinero");
-		String moneda= req.getParameter("moneda");
-		
+		String moneda= req.getParameter("moneda");		
 		
 				
 		PrintWriter out = resp.getWriter();

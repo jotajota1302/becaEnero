@@ -34,6 +34,11 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>edu.es.eoi</groupId>
+			<artifactId>gastroDates</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>		
 
 	</dependencies>
 
